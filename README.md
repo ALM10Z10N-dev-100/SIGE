@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fronted
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# SIGE
+Sistema Integral de Gestión Educativa (SIGE): plataforma web en Angular para registro de alumnos, gestión de docentes y administración académica.
+>>>>>>> 2729c08ba28ee8c8d4cdac1ca7f332da79134d5a
