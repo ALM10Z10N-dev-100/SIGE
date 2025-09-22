@@ -13,10 +13,8 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "outputPath": "dist/frontend",
+            "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -26,7 +24,8 @@
             ],
             "styles": [
               "src/styles.css"
-            ]
+            ],
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
@@ -42,7 +41,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/"
             },
             "development": {
               "optimization": false,
