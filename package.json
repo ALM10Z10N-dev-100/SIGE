@@ -1,22 +1,30 @@
 {
-  "name": "fronted",
+  "name": "frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^20.0.0",
+    "@angular/cdk": "^20.0.0",
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",
     "@angular/core": "^20.0.0",
     "@angular/forms": "^20.0.0",
+    "@angular/material": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
+    "@angular/platform-browser-dynamic": "^20.0.0",
     "@angular/router": "^20.0.0",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
+    "firebase": "^12.3.0",
     "rxjs": "~7.8.0",
+    "simple-parallax-js": "^5.6.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },

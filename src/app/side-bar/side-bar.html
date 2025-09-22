@@ -1,0 +1,176 @@
+<!-- Contenedor del botón hamburguesa con directiva -->
+<div class="menu icon" btnHamburguesa (clicHamburguesa)="alternarMenu()">
+  <!-- Icono Hamburguesa -->
+  <animated-icons
+    src="https://animatedicons.co/get-icon?name=Menu&style=minimalistic&token=c9a15816-8582-4762-810c-23adfb75a127"
+    trigger="click" attributes='{
+      "variationThumbColour":"#536DFE",
+      "variationName":"Two Tone",
+      "variationNumber":2,
+      "numberOfGroups":2,
+      "backgroundIsGroup":false,
+      "strokeWidth":1.5,
+      "defaultColours":{
+        "group-1":"#265FDDFF",
+        "group-2":"#0027FFFF",
+        "background":"#E4EEF5FF"
+      }
+    }' height="24px" width="24px">
+  </animated-icons>
+
+  <!-- Contenedor desplegable -->
+  <div *ngIf="mostrarMenu" class="menu-ham" [@colapsarMenu]="mostrarMenu ? 'expandido' : 'colapsado'">
+
+    <!-- Panel Configuración -->
+    <div class="panel-icono configuracion" [class.disabled]="activePanel && activePanel !== 'configuracion'"
+      (click)="togglePanel('configuracion'); $event.stopPropagation()">
+      <animated-icons
+        src="https://animatedicons.co/get-icon?name=setting&style=minimalistic&token=dca75500-0e08-4c4f-b3f9-78b4fe6c03df"
+        trigger="click" attributes='{
+          "variationThumbColour":"#536DFE",
+          "variationName":"Two Tone",
+          "variationNumber":2,
+          "numberOfGroups":2,
+          "backgroundIsGroup":false,
+          "strokeWidth":1.5,
+          "defaultColours":{
+            "group-1":"#265FDDFF",
+            "group-2":"#0027FFFF",
+            "background":"#E4EEF5FF"
+          }
+        }' [class.abierto]="activePanel === 'configuracion'" [class.cerrado]="activePanel !== 'configuracion'"
+        width="40px" height="40px">
+      </animated-icons>
+      <div *ngIf="activePanel === 'configuracion'" class="panel-contenido" [@colapsarPanel]="estadoPanel">
+        <a class="a_Con" routerLink="/configuracion">
+          {{ 'HAMBURGUESA.CONFIGURACION' | translate }}
+        </a>
+      </div>
+    </div>
+
+    <!-- Panel Recursos -->
+    <div class="panel-icono recursos" [class.disabled]="activePanel && activePanel !== 'recursos'"
+      (click)="togglePanel('recursos'); $event.stopPropagation()">
+      <animated-icons
+        src="https://animatedicons.co/get-icon?name=Learned&style=minimalistic&token=49b1299b-1bb0-4144-8e32-4265bddc1e65"
+        trigger="click" attributes='{
+          "variationThumbColour":"#536DFE",
+          "variationName":"Two Tone",
+          "variationNumber":2,
+          "numberOfGroups":2,
+          "backgroundIsGroup":false,
+          "strokeWidth":1.5,
+          "defaultColours":{
+            "group-1":"#265FDDFF",
+            "group-2":"#0027FFFF",
+            "background":"#E4EEF5FF"
+          }
+        }' [class.abierto]="activePanel === 'recursos'" [class.cerrado]="activePanel !== 'recursos'"
+        [class.expandido]="activePanel === 'recursos'" width="40px" height="40px">
+      </animated-icons>
+      <div *ngIf="activePanel === 'recursos'" class="panel-contenido" [@colapsarPanel]="estadoPanel">
+        <div class="panel-texto" [ngClass]="{
+          'texto-abierto': activePanel === 'recursos',
+          'texto-cerrado': activePanel !== 'recursos'
+        }">
+          <a class="a_Rec" routerLink="/recursos">
+            {{ 'HAMBURGUESA.RECURSOS' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel Calendario (ahora separado) -->
+    <div class="panel-icono calendario" [class.disabled]="activePanel && activePanel !== 'calendario'"
+      (click)="togglePanel('calendario'); $event.stopPropagation()">
+      <animated-icons
+        src="https://animatedicons.co/get-icon?name=calendar%20V3&style=minimalistic&token=4c41ae18-3a92-43bc-b097-59c6f2c21510"
+        trigger="click" attributes='{
+          "variationThumbColour":"#536DFE",
+          "variationName":"Two Tone",
+          "variationNumber":2,
+          "numberOfGroups":2,
+          "backgroundIsGroup":false,
+          "strokeWidth":1.5,
+          "defaultColours":{
+            "group-1":"#265FDDFF",
+            "group-2":"#0027FFFF",
+            "background":"#E4EEF5FF"
+          }
+        }' [class.abierto]="activePanel === 'calendario'" [class.cerrado]="activePanel !== 'calendario'"
+        [class.expandido]="activePanel === 'calendario'" height="40px" width="40px">
+      </animated-icons>
+      <div *ngIf="activePanel === 'calendario'" class="panel-contenido" [@colapsarPanel]="estadoPanel">
+        <div class="panel-texto" [ngClass]="{
+          'texto-abierto': activePanel === 'calendario',
+          'texto-cerrado': activePanel !== 'calendario'
+        }">
+          <a class="a_Cal" routerLink="/calendario">
+            {{ 'HAMBURGUESA.CALENDARIO' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="panel-icono login" [class.disabled]="activePanel && activePanel !== 'login'"
+      (click)="togglePanel('login'); $event.stopPropagation()">
+      <animated-icons
+        src="https://animatedicons.co/get-icon?name=login&style=minimalistic&token=e611dfb8-fad8-4fd7-80da-af68bebdafb8"
+        trigger="click" attributes='{
+          "variationThumbColour":"#536DFE",
+          "variationName":"Two Tone",
+          "variationNumber":2,
+          "numberOfGroups":2,
+          "backgroundIsGroup":false,
+          "strokeWidth":1.5,
+          "defaultColours":{
+            "group-1":"#FFF",
+            "group-2":"#0027FFFF",
+            "background":"#E4EEF5FF"
+          }
+        }' [class.abierto]="activePanel === 'login'" [class.cerrado]="activePanel !== 'login'"
+        [class.expandido]="activePanel === 'login'" height="40px" width="40px">
+      </animated-icons>
+      <div *ngIf="activePanel === 'login'" class="panel-contenido" [@colapsarPanel]="estadoPanel">
+        <div class="panel-texto" [ngClass]="{
+          'texto-abierto': activePanel === 'login',
+          'texto-cerrado': activePanel !== 'login'
+        }">
+          <a class="a_Log" routerLink="/login">
+            {{ 'HAMBURGUESA.LOGIN' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+  <div class="panel-icono calificaciones" [class.disabled]="activePanel && activePanel !== 'calificaciones'"
+      (click)="togglePanel('calificaciones'); $event.stopPropagation()">
+      <animated-icons
+  src="https://animatedicons.co/get-icon?name=Accreditation&style=minimalistic&token=f7f902ac-91df-4d7d-8444-71b41d1a2a9e"
+  trigger="click"
+  attributes='{
+          "variationThumbColour":"#536DFE",
+          "variationName":"Two Tone",
+          "variationNumber":2,
+          "numberOfGroups":2,
+          "backgroundIsGroup":false,
+          "strokeWidth":1.5,
+          "defaultColours":{
+            "group-1":"#FFF",
+            "group-2":"#0027FFFF",
+            "background":"#E4EEF5FF"
+          }
+        }' [class.abierto]="activePanel === 'calificaciones'" [class.cerrado]="activePanel !== 'calificaciones'"
+        [class.expandido]="activePanel === 'calificaciones'" height="40px" width="40px">
+      </animated-icons>
+      <div *ngIf="activePanel === 'calificaciones'" class="panel-contenido" [@colapsarPanel]="estadoPanel">
+        <div class="panel-texto" [ngClass]="{
+          'texto-abierto': activePanel === 'calificaciones',
+          'texto-cerrado': activePanel !== 'calificaciones'
+        }">
+          <a class="a_Cali" routerLink="/Evaluaciones">
+            {{ 'HAMBURGUESA.EVALUACIONES' | translate }}
+          </a>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "fronted": {
+    "frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "fronted:build:production"
+              "buildTarget": "frontend:build:production"
             },
             "development": {
-              "buildTarget": "fronted:build:development"
+              "buildTarget": "frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,6 +82,7 @@
               }
             ],
             "styles": [
+              "src/assets/WEB/css/kalam.css",
               "src/styles.css"
             ]
           }

@@ -1,0 +1,136 @@
+.mensaje-bienvenida {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: linear-gradient(to bottom, #aee3ff, #ffffff);
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(173, 216, 230, 0.5);
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+}
+
+.cloud-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: url('/assets/img/bg/nubes.png') repeat-x;
+  animation: cloudsMove 30s linear infinite;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.mensaje-bienvenida span {
+  display:inline-block;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.mensaje-bienvenida p{
+  font-style: italic;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  color: #957dee;
+}
+
+h2{
+  color: #e96fba;
+}
+
+.intro {
+  font-size: 1.4rem;
+  filter: drop-shadow(10px 10px 10px #b700ff);
+}
+
+.resaltado {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #584013;
+  animation: flotar 3s ease-in-out infinite;
+}
+.texto-suave {
+  font-size: 1.2rem;
+  filter: drop-shadow(10px 10px 10px #b700ff);
+}
+
+.decoracion {
+  font-size: 1.5rem;
+  color: #f0c420;
+}
+
+.estrella .corazon {
+  position: absolute;
+  top: 10px;
+  font-size: 2rem;
+  animation: flotar 4s ease-in-out infinite;
+}
+
+.estrella {
+  left: 10px;
+  color: #ffd700;
+}
+
+.corazon {
+  right: 10px;
+  color: #ff7a7a;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+.resaltado-corazon {
+  color: #062407;
+}
+
+.valor {
+  font-style: italic;
+  color: #4f79ee;
+}
+
+.valor-creatividad {
+  color: #c071ee;
+}
+
+.valor-respeto {
+  color: #6d5075;
+}
+
+.valor-alegria {
+  color: #d4c117;
+}
+
+.valor-compromiso {
+  color: #d479fc;
+}
+.flecha-volver {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #ccefff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  animated-icons {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover animated-icons {
+    transform: scale(1.2) rotate(-10deg);
+  }
+}

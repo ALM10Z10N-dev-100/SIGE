@@ -1,0 +1,189 @@
+.fondo-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.panel-configuracion {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.4s ease;
+  position: relative;
+}
+
+.cerrar-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #555;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.idioma-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.idioma-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #eee;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.idioma-buttons button.activo {
+  background-color: #2196F3;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.acciones {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.guardar-btn {
+  padding: 0.75rem 1.5rem;
+  margin-top: 20%;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.guardar-btn:hover {
+  background-color: #45a049;
+}
+
+.traducir-btn {
+  justify-self: center;
+  left: 43.5%;
+  margin-top: 5%;
+  position: fixed;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #3e7cda;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.traducir-btn:hover {
+  background-color: #2e5cb8;
+}
+
+.fondo-claro {
+  background-color: #fff; 
+  color: #3e7cda;  
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.fondo-oscuro {
+  background-color: #000; 
+  color: #3e7cda; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.icono-svg{
+  position: fixed;
+  margin-top: -11px;
+  left: 50%;
+}
+
+.icono-svg.icono-luna {
+  position: fixed;
+  margin-top: -1%;
+}
+
+.alerta-exito {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,59 @@
+<div class="calificaciones-container">
+  <h2>Calificaciones por Bimestre</h2>
+  <p class="mensaje-bienvenida">Ingresa las calificaciones del alumno con cariño y cuidado ✨</p>
+
+  <form (ngSubmit)="guardarCalificaciones()">
+    <label for="alumno">Selecciona al alumno:</label>
+<select [(ngModel)]="alumnoId" name="alumno" required>
+  <option [ngValue]="''" disabled>— Seleccione el alumno —</option>
+  <option *ngFor="let alumno of alumnos" [ngValue]="alumno._id">
+    {{ alumno.nombre }} {{ alumno.apellido }} · Edad {{ alumno.edad }} · {{ alumno.grado }}° {{ alumno.grupo }}
+  </option>
+</select>
+    <label for="bimestre">Selecciona el bimestre:</label>
+    <select [(ngModel)]="bimestreSeleccionado" name="bimestre" required>
+      <option *ngFor="let b of bimestres" [value]="b">{{ b }}</option>
+    </select>
+
+    <div *ngFor="let materia of materias" class="materia-item">
+      <label [for]="materia">{{ materia }}:</label>
+      <input
+        type="number"
+        min="0"
+        max="10"
+        step="0.1"
+        [id]="materia"
+        [(ngModel)]="calificaciones[materia]"
+        [name]="materia"
+        required
+      />
+    </div>
+
+    <div class="promedio-preview">
+  <p>🌟 Promedio del {{bimestreSeleccionado}} bimestre:  <strong>{{ calcularPromedio() }}</strong></p>
+</div>
+
+    <button type="submit" class="btn-guardar">Guardar calificaciones</button>
+    <p *ngIf="mensajeGuardado" class="mensaje-confirmacion">{{ mensajeGuardado }}</p>
+  </form>
+
+  <div class="desglose-calificaciones" *ngIf="calificacionesDesglosadas">
+    <h4>📋 Calificaciones guardadas para:
+  <span *ngIf="alumnoSeleccionado">
+    {{ alumnoSeleccionado.nombre }} {{ alumnoSeleccionado.apellido }}
+  </span>
+</h4>
+    <ul>
+      <li *ngFor="let materia of materias">
+        <strong>{{ materia }}:</strong>
+{{ calificacionesDesglosadas.materias[materia] || '— Sin nota —' }}
+      </li>
+    </ul>
+    <p>🌟 Promedio final: <strong>{{ calcularPromedio() }}</strong></p>
+
+    <p *ngIf="mensajeEmocional" class="mensaje-emocional">
+  {{ mensajeEmocional }}
+</p>
+
+  </div>
+</div>

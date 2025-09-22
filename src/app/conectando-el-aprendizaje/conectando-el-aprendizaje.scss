@@ -1,0 +1,161 @@
+.pequeños-aprendizajes {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: linear-gradient(to bottom, #ccefff, #fef9f5);
+  padding: 1rem;
+}
+
+.mensaje p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #151922;
+  animation: highlight 2s infinite alternate;
+}
+
+.resaltado {
+  font-weight: bold;
+  color: #3f9705;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+}
+
+.resaltado-corazon {
+  color: #f35195;
+}
+
+.valor {
+  font-style: italic;
+  color: #ff8c42;
+}
+
+.valor-creatividad {
+  color: #00fff2;
+}
+
+.valor-respeto {
+  color: #cd6ae9;
+}
+
+.valor-alegria {
+  color: #dfd478;
+}
+
+.valor-compromiso {
+  color: #d479fc;
+}
+
+.cloud-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 149px;
+  background: url('/assets/img/bg/nubes.png') repeat-x;
+  animation: cloudsMove 30s linear infinite;
+  z-index: 1;
+  opacity: 0.2;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes highlight {
+  from {
+    background-color: #dff6ff;
+  }
+
+  to {
+    background-color: #b0e0ff;
+  }
+}
+
+@keyframes cloudsMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes saludo {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(8deg);
+  }
+}
+
+.PpGa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pequeños-aprendizajes_0 {
+  flex: 1;
+  text-align: left;
+}
+
+.pequeños-aprendizajes_1 {
+  flex: 1;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.pequeños-aprendizajes_2 {
+  flex: 1;
+  text-align: right;
+}
+
+.PpGa img {
+  display: block;
+  margin: 1rem auto 0 auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #ccefff;
+}
+
+.flecha-volver {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #ccefff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  animated-icons {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover animated-icons {
+    transform: scale(1.2) rotate(-10deg);
+  }
+}

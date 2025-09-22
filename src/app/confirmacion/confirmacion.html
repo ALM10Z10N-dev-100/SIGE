@@ -1,0 +1,18 @@
+<div class="contenedor-confirmacion">
+  <h2>📩 Confirma tu cuenta</h2>
+  <p>Ingresa el código que recibiste por SMS para activar tu cuenta.</p>
+
+  <form [formGroup]="form" (ngSubmit)="onConfirmar()">
+    <input formControlName="email" placeholder="Correo registrado" />
+    <input formControlName="codigo" placeholder="Código de confirmación" />
+    <button type="submit">Confirmar</button>
+  </form>
+
+  <div *ngIf="mensaje" class="mensaje-exito">
+    {{ mensaje }}
+  </div>
+
+  <div *ngIf="error" class="mensaje-error">
+    {{ error }}
+  </div>
+</div>

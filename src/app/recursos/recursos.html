@@ -1,0 +1,59 @@
+<section class="recursos-panel">
+  <div class="flecha-volver" (click)="volver()">
+  <animated-icons
+  src="https://animatedicons.co/get-icon?name=Arrow%20Left&style=minimalistic&token=fa13e0db-49ee-4fc6-88d0-609496daffac"
+  trigger="click"
+  attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#002DFFFF","group-2":"#0019FFFF","background":"#FFFFFF"}}'
+  height="32"
+  width="32"
+></animated-icons>
+</div>
+  <h2>{{ 'RESOURCES.TITLE' | translate }}</h2>
+  <div class="categorias">
+    <button *ngFor="let cat of ['BOOKS', 'VIDEOS', 'GAMES']"
+            (click)="filtrarPorCategoria(cat)"
+            [class.activo]="mapaCategorias[cat] === categoriaSeleccionada">
+      {{ 'RESOURCES.CATEGORIES.' + cat | translate }}
+    </button>
+  </div>
+
+  <div class="lista-recursos">
+    <div class="recurso"
+         *ngFor="let recurso of recursosFiltrados"
+         (click)="mostrarOverlay(recurso)">
+         
+      <img *ngIf="recurso.imagen" [src]="recurso.imagen" [alt]="recurso.titulo" />
+      <h3>{{ recurso.titulo }}</h3>
+      <p>{{ recurso.descripcion }}</p>
+    </div>
+  </div>
+
+  <div class="overlay" *ngIf="recursoSeleccionado" @fadeOverlay>
+    <div class="contenido-overlay">
+      <button class="cerrar" (click)="cerrarOverlay()">×</button>
+      <h2>{{ recursoSeleccionado.titulo }}</h2>
+      <p>{{ recursoSeleccionado.descripcion }}</p>
+
+      <ng-container [ngSwitch]="recursoSeleccionado.tipo">
+        <div *ngSwitchCase="'Libros'">
+          <a [href]="recursoSeleccionado.url" target="_blank">
+            {{ 'RESOURCES.OPEN' | translate }}
+          </a>
+          <p><strong>{{ 'RESOURCES.AUTHOR' | translate }}:</strong> {{ recursoSeleccionado.autor }}</p>
+          <p><strong>{{ 'RESOURCES.LANGUAGES' | translate }}:</strong> {{ recursoSeleccionado.idiomaES }} / {{ recursoSeleccionado.idiomaEN }}</p>
+        </div>
+
+        <div *ngSwitchCase="'Videos'">
+          <a [href]="recursoSeleccionado.url" target="_blank">
+            {{ 'RESOURCES.OPEN' | translate }}
+          </a>
+        </div>
+
+        <div *ngSwitchCase="'Juegos'">
+          <a [href]="recursoSeleccionado.url" target="_blank"></a>
+          <p><strong>{{ 'RESOURCES.AGE' | translate }}:</strong> {{ recursoSeleccionado.edadRecomendada }}+</p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

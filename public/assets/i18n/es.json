@@ -1,0 +1,71 @@
+{
+  "CONFIGURACION": {
+  "TITULO": "Configuración",
+  "MODO_CLARO": "Modo Claro",
+  "MODO_OSCURO": "Modo Oscuro",
+  "GUARDAR": "Guardar cambios",
+  "CERRAR": "Cerrar"
+},
+  "HAMBURGUESA": {
+    "LOGIN": "Iniciar sesión",
+    "CONFIGURACION": "Configuración",
+    "RECURSOS": "Recursos",
+    "CALENDARIO": "Calendario",
+    "EVALUACIONES": "Evaluaciones"
+  },
+  "NAVBAR": {
+    "INICIO": "Inicio",
+    "QUIENES_SOMOS": "¿Quiénes somos?",
+    "APRENDIZAJE": "Pequeños pasos, grandes aprendizajes",
+    "DOCENTES": "Docentes",
+    "MANITAS": "Manitas Entusiastas",
+    "COMUNIDAD": "Comunidad Que Inspira"
+  },
+  "RESOURCES": {
+    "TITLE": "Recursos",
+    "OPEN": "Abrir",
+    "AUTHOR": "Autor",
+    "LANGUAGES": "Idiomas",
+    "AGE": "Edad recomendada",
+    "CATEGORIES": {
+      "BOOKS": "Libros",
+      "VIDEOS": "Videos",
+      "GAMES": "Juegos"
+    }
+  },
+  "SOMOS": {
+    "MENSAJE_1": "Somos una supervisión Escolar que coordina, organiza y evalúa acciones académicas y administrativas.",
+    "MENSAJE_2": "Promovemos el trabajo colaborativo, fundamentado en valores universales, con comunicación permanente y acompañamiento sistemático.",
+    "BUHO": "búho sabio",
+    "PEZ": "pez cooperativo"
+  },
+  "APRENDIZAJE": {
+    "MENSAJE_1": "En esta Supervisión Escolar cultivamos aprendizajes con el corazón, promoviendo la colaboración, la creatividad y el respeto en cada paso que damos juntos.",
+    "MENSAJE_2": "Cada docente, cada familia, cada niño es parte de esta historia... una historia que creamos día a día con alegría, compromiso y valores que nos unen."
+  },
+  "MANITAS": {
+    "MENSAJE_1": "Manitas Entusiastas que crean, que sienten, que descubren...",
+    "MENSAJE_2": "Cada trazo, cada forma es una historia contada desde el corazón.",
+    "MENSAJE_3": "Estas manitas curiosas transforman el mundo con ternura y color, entre juegos, sonrisas y pequeños grandes pasos.",
+    "MAGIA": "Explorar, imaginar, crear... las manos son el puente hacia la magia del aprendizaje."
+  },
+  "INICIO": {
+    "TITULO": "¡Bienvenidos a una Comunidad que Inspira!",
+    "MENSAJE_1": "En esta Supervisión Escolar cultivamos aprendizajes con el corazón, promoviendo la colaboración, la creatividad y el respeto en cada paso que damos juntos.",
+    "MENSAJE_2": "Cada docente, cada familia, cada niño es parte de esta historia... una historia que creamos día a día con alegría, compromiso y valores que nos unen.",
+    "BOTON": "Explora y Crece Con Nosotros"
+  },
+  "COMUNIDAD": {
+    "MENSAJE_1": "Somos una comunidad que inspira, cada gesto, cada mirada, cada palabra, siembra valores que florecen con alegría y respeto.",
+    "MENSAJE_2": "Familias, docentes y niños construyen día a día un espacio lleno de creatividad, emociones y pequeños grandes logros.",
+    "INTRO": "Inspirar es conectar...",
+    "RESALTADO": "es compartir, es crecer",
+    "JUNTOS": "juntos en un",
+    "MUNDO": "mundo de valores"
+  },
+  "DOCENTES": {
+    "MENSAJE_1": "Docentes estrella que inspiran en cada mirada curiosa, que plantan una semilla y siembran conocimiento, creatividad y respeto en cada historia compartida.",
+    "MENSAJE_2": "Son ellos quienes transforman lo cotidiano en extraordinario, quienes abrazan sueños y los convierten en descubrimientos. Enseñanzas llenas de alegría, compromiso y una vocación hermosa.",
+    "MAGIA": "En nuestra comunidad educativa, cada docente es un faro de luz que guía el viaje de nuestros pequeños exploradores."
+  }
+}

@@ -1,0 +1,8 @@
+<div class="fade-carousel">
+  <img
+    *ngFor="let img of images; let i = index"
+    [src]="img"
+    [class.active]="i === currentIndex"
+    class="carousel-img"
+  />
+</div>
