@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
@@ -42,6 +43,8 @@ testem.log
 .DS_Store
 Thumbs.db
 =======
+=======
+>>>>>>> 781e35eb6826203674c935d00a4dfed2ada9c49b
 # Logs
 logs
 *.log
@@ -181,4 +184,7 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+<<<<<<< HEAD
 >>>>>>> 2729c08ba28ee8c8d4cdac1ca7f332da79134d5a
+=======
+>>>>>>> 781e35eb6826203674c935d00a4dfed2ada9c49b
