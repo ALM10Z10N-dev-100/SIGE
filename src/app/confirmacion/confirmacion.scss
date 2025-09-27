@@ -1,0 +1,62 @@
+.contenedor-confirmacion {
+  position: relative; /* ✅ ya no absolute, fluye debajo del nav */
+  max-width: 400px;
+  margin: 120px auto 0 auto; /* lo baja debajo del nav-bar */
+  padding: 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #6427f3;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: #388e3c;
+    }
+  }
+
+  .mensaje-exito {
+    color: #2e7d32;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  .mensaje-error {
+    color: #c62828;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+}
+
+/* 📱 Responsivo */
+@media (max-width: 480px) {
+  .confirmacion-container {
+    margin: 100px 1rem 0 1rem; /* más aire en móviles pequeños */
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,141 @@
+.manitas-entusiastas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: linear-gradient(to bottom, #ccefff, #fef9f5);
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+}
+
+
+.cloud-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: url('/assets/img/bg/nubes.png') repeat-x;
+  animation: cloudsMove 30s linear infinite;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.manitas-entusiastas p {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.manitas-entusiastas span {
+  display: inline-block;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+ img{
+  width: 500px;
+ }
+
+
+.intro {
+  font-size: 1.4rem;
+  color: #ff8aa0;
+  filter: drop-shadow(4px 4px 6px #ffffff);
+}
+
+.resaltado {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #d491b3;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+.texto-suave {
+  font-size: 1.2rem;
+  color: #8d69bf;
+}
+
+.valor-creacion {
+  color: #29b5ec;
+}
+
+.valor-emocion {
+  color: #ea80fc;
+}
+
+.valor-juego {
+  color: #f48fb1;
+}
+
+.valor-sonrisa {
+  color: #ffd54f;
+   filter:drop-shadow(1px 1px 1px #fadd5a);
+}
+
+.decoracion {
+  font-size: 2rem;
+  color: #ffd700;
+}
+
+.corazon {
+  font-size: 2rem;
+  color: #ff7a7a;
+  animation: flotar 4s ease-in-out infinite;
+}
+
+h2{
+  color: #70b5e4;
+}
+
+.magia{
+  font-size: 2rem;
+  font-weight: bold;
+  color:#ffd700;
+}
+
+.ilustracion-manitas img {
+  width: 220px;
+  max-width: 100%;
+  margin-top: 1rem;
+  animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes cloudsMove {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 0; }
+}
+.flecha-volver {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #ccefff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  animated-icons {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover animated-icons {
+    transform: scale(1.2) rotate(-10deg);
+  }
+}

@@ -1,0 +1,10 @@
+<router-outlet name="nav-bar"></router-outlet>
+<router-outlet name="side-bar"></router-outlet>
+<router-outlet></router-outlet>
+<main>
+  <router-outlet name="home"></router-outlet>
+  <router-outlet name="bienvenida"></router-outlet>
+  </main>
+<div *ngIf="isInicio()" class="ctn-logo">
+  <img src="assets/img/logo/logo.png" width="150px" height="150px" />
+</div>

@@ -1,0 +1,71 @@
+{
+    "CONFIGURACION": {
+  "TITULO": "Settings",
+  "MODO_OSCURO": "Dark Mode",
+  "MODO_CLARO": "Dark Mode",
+  "GUARDAR": "Save changes",
+  "CERRAR": "Close"
+},
+  "HAMBURGUESA": {
+    "LOGIN": "Log In",
+    "CONFIGURACION": "Settings",
+    "RECURSOS": "Resources",
+    "CALENDARIO": "Calendar",
+    "EVALUACIONES": "Evaluations"
+  },
+  "NAVBAR": {
+    "INICIO": "Home",
+    "QUIENES_SOMOS": "Who We Are",
+    "APRENDIZAJE": "Small Steps, Big Learnings",
+    "DOCENTES": "Teachers",
+    "MANITAS": "Enthusiastic Little Hands",
+    "COMUNIDAD": "Inspiring Community"
+  },
+  "RESOURCES": {
+    "TITLE": "Resources",
+    "OPEN": "Open",
+    "AUTHOR": "Author",
+    "LANGUAGES": "Languages",
+    "AGE": "Recommended Age",
+    "CATEGORIES": {
+      "BOOKS": "Books",
+      "VIDEOS": "Videos",
+      "GAMES": "Games"
+    }
+  },
+  "SOMOS": {
+    "MENSAJE_1": "We are a School Supervision team that coordinates, organizes, and evaluates academic and administrative actions.",
+    "MENSAJE_2": "We promote collaborative work based on universal values, with ongoing communication and systematic support.",
+    "BUHO": "wise owl",
+    "PEZ": "cooperative fish"
+  },
+  "APRENDIZAJE": {
+    "MENSAJE_1": "In this School Supervision, we cultivate learning with heart, promoting collaboration, creativity, and respect in every step we take together.",
+    "MENSAJE_2": "Every teacher, every family, every child is part of this story... a story we create day by day with joy, commitment, and values that unite us."
+  },
+  "MANITAS": {
+    "MENSAJE_1": "Enthusiastic Little Hands that create, feel, and discover...",
+    "MENSAJE_2": "Each stroke, each shape is a story told from the heart.",
+    "MENSAJE_3": "These curious little hands transform the world with tenderness and color, through games, smiles, and small great steps.",
+    "MAGIA": "Explore, imagine, create... hands are the bridge to the magic of learning."
+  },
+  "INICIO": {
+    "TITULO": "Welcome to an Inspiring Community!",
+    "MENSAJE_1": "In this School Supervision, we cultivate learning with heart, promoting collaboration, creativity, and respect in every step we take together.",
+    "MENSAJE_2": "Every teacher, every family, every child is part of this story... a story we create day by day with joy, commitment, and values that unite us.",
+    "BOTON": "Explore and Grow With Us"
+  },
+  "COMUNIDAD": {
+    "MENSAJE_1": "We are an inspiring community—every gesture, every look, every word plants values that bloom with joy and respect.",
+    "MENSAJE_2": "Families, teachers, and children build each day a space full of creativity, emotions, and small great achievements.",
+    "INTRO" : "To inspire is to connect...",
+    "RESALTADO" : "it's sharing, it's growing",
+    "JUNTOS" : "together in a",
+    "MUNDO" : "world of values"
+  },
+  "DOCENTES": {
+    "MENSAJE_1": "Star teachers who inspire with every curious glance, who plant a seed and sow knowledge, creativity, and respect in every shared story.",
+    "MENSAJE_2": "They are the ones who turn the ordinary into the extraordinary, who embrace dreams and turn them into discoveries. Teachings full of joy, commitment, and a beautiful vocation.",
+    "MAGIA": "In our educational community, every teacher is a beacon of light guiding the journey of our little explorers."
+  }
+}

@@ -1,0 +1,34 @@
+<div class="calendario-emergente" #calendario *ngIf="mostrarCalendario">
+  <div class="encabezado">
+    <button (click)="cambiarMes(-1)" aria-label="Mes anterior">⬅</button>
+    <h2>{{ fechaActual | date: 'MMMM yyyy' }}</h2>
+    <button (click)="cambiarMes(1)" aria-label="Mes siguiente">➡</button>
+  </div>
+
+  <div class="dias-semana">
+    <div *ngFor="let dia of diasSemana">{{ dia }}</div>
+  </div>
+
+  <div class="grid">
+    <div
+      class="dia"
+      *ngFor="let dia of getDiasDelMes()"
+      [class.vacio]="!dia"
+    >
+      <ng-container *ngIf="dia; else diaVacio">
+        <div class="numero">{{ dia.getDate() }}</div>
+        <div class="eventos">
+          <div
+            class="evento"
+            *ngFor="let evento of eventosDelDia(dia)"
+            [style.background]="evento.color"
+            [title]="evento.descripcion"
+          >
+            {{ evento.icono }}
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #diaVacio></ng-template>
+    </div>
+  </div>
+</div>
