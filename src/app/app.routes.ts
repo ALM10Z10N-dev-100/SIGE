@@ -5,12 +5,12 @@ import { CuentaActivadaComponent } from './cuenta-activada/cuenta-activada';
 export const routes: Routes = [
   {
     path: '',
+    loadComponent: () => import('./bienvenida/bienvenida')
+                      .then(m => m.Bienvenida)
+  },
+  {
+    path: '',
     children: [
-      {
-        path: '',
-        loadComponent: () => import('./bienvenida/bienvenida')
-                            .then(m => m.Bienvenida)
-      },
       {
         path: '',
         outlet: 'nav-bar',
@@ -35,9 +35,7 @@ export const routes: Routes = [
         loadComponent: () => import('./bienvenida/bienvenida')
                             .then(m => m.Bienvenida)
       },
-      // ... todas las demás rutas como las tienes
-      { path: 'confirmacion', component: ConfirmacionComponent},
-      { path: 'cuenta-activada', component: CuentaActivadaComponent  }
+      // ... todas las demás rutas
     ]
   }
 ];
