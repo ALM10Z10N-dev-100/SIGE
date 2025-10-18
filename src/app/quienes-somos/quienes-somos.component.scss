@@ -1,0 +1,215 @@
+.somos-container {
+  position: absolute; // Cambiado de relative a absolute
+  top: 0;             // Lo posiciona en la parte superior
+  left: 0;
+  width: 100%;
+  z-index: 999;       // Asegura que esté por encima del navbar
+  padding: 2rem;
+  background: linear-gradient(to bottom, #ccefff, #fef9f5);
+  border-radius: 0 0 12px 12px; // Solo bordes inferiores redondeados
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.mensaje p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+
+.resaltado {
+  font-weight: bold;
+  color: #0077b6;
+  background: #dff6ff;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  animation: highlight 2s infinite alternate;
+}
+
+.valor {
+  font-style: italic;
+  color: #ff8c42;
+}
+
+.cloud-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: url('/assets/img/bg/nubes.png') repeat-x;
+  animation: cloudsMove 30s linear infinite;
+  z-index: 1;
+  opacity: 0.2;
+}
+
+.personajes img  {
+  display: flex;
+  justify-self: center;
+  margin: 1rem;  
+}
+
+img .buho{
+  width: 500px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.buho{
+  position: relative;
+  margin: 0 auto;
+  margin-top: 7%;
+  animation: saludo 2s ease-in infinite alternate;
+  text-align: center;
+  font-weight: bold;
+  color: #0077b6;
+  padding: 0.2rem 0.4rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.pez{
+  position: relative;
+  margin: 0 auto;
+  animation: saludo 2s ease-in infinite ;
+  animation: saludo 1s ease-in-out infinite alternate;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0.2rem 0.4rem;
+  font-family: 'Poppins', sans-serif;
+    color: #ff8c42;
+}
+
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes highlight {
+  from {
+    background-color: #dff6ff;
+  }
+  to {
+    background-color: #b0e0ff;
+  }
+}
+
+@keyframes cloudsMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes saludo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+@media (max-width: 1024px) {
+  .somos-container {
+    padding: 1.5rem;
+  }
+
+  .mensaje p {
+    font-size: 1.1rem;
+  }
+
+  .buho, .pez {
+    margin-top: 5%;
+    font-size: 1rem;
+  }
+
+  img.buho {
+    width: 400px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .somos-container {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .mensaje p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .resaltado {
+    font-size: 0.95rem;
+    padding: 0.2rem 0.3rem;
+  }
+
+.buho img {
+  width: 500px;
+  height: 300px;
+  object-fit: contain;
+}
+
+
+  .cloud-bg {
+    height: 150px;
+    opacity: 0.15;
+  }
+}
+
+@media (max-width: 480px) {
+  .somos-container {
+    padding: 0.8rem;
+  }
+
+  .mensaje p {
+    font-size: 0.95rem;
+  }
+
+  .buho, .pez {
+    font-size: 0.9rem;
+    margin-top: 3%;
+  }
+
+  .personajes img {
+    margin: 0.5rem auto;
+    width: 90%;
+  }
+}
+.flecha-volver {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #ccefff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  animated-icons {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover animated-icons {
+    transform: scale(1.2) rotate(-10deg);
+  }
+}

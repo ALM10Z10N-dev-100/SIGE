@@ -1,0 +1,21 @@
+<div class="dashboard-primaria">
+  <h2>📊 Calificaciones por alumno – Primaria</h2>
+
+  <div *ngFor="let alumno of alumnos" class="card">
+    <h3>{{ alumno.nombre }} {{ alumno.apellido }} – {{ alumno.grupo }}</h3>
+    <p>Edad: {{ alumno.edad }} | Género: {{ alumno.genero }}</p>
+
+    <div class="calificaciones">
+      <div *ngFor="let b of bimestres" class="bimestre">
+        <span class="etiqueta">{{ b }}:</span>
+        <span class="valor">{{ alumno.calificaciones[b] }}</span>
+      </div>
+    </div>
+
+    <div class="promedio" [ngClass]="colorPorPromedio(alumno.promedio)">
+      Promedio: <strong>{{ alumno.promedio }}</strong>
+    </div>
+
+    <p class="mensaje">{{ alumno.mensaje }}</p>
+  </div>
+</div>

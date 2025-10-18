@@ -1,0 +1,37 @@
+<div class="calendar-overlay" *ngIf="isOpen">
+  <div class="calendar-modal" #modal>
+    <div class="calendar-header">
+      <button (click)="prevMonth()">←</button>
+      <h2>{{ monthNames[currentMonth] }} {{ currentYear }}</h2>
+      <button (click)="nextMonth()">→</button>
+    </div>
+
+    <div class="calendar-grid">
+      <div class="day-name" *ngFor="let day of dayNames">{{ day }}</div>
+      <div
+        class="day-cell"
+        *ngFor="let day of calendarDays"
+        [class.today]="isToday(day)"
+        [class.selected]="isSelected(day)"
+        [class.holiday]="isHoliday(day)"
+        (click)="selectDay(day)"
+      >
+        {{ day.getDate() }}
+      </div>
+    </div>
+
+    <div class="calendar-footer">
+      <div *ngIf="selectedDay" class="activity-box">
+        <h3>Actividades para el {{ selectedDay | date:'d MMMM' }}</h3>
+        <ul>
+          <li *ngFor="let item of activities[selectedKey]; let i = index">
+            {{ item }}
+            <button class="delete-btn" (click)="removeActivity(selectedKey, i)">❌</button>
+          </li>
+        </ul>
+        <input [(ngModel)]="newActivity" placeholder="Nueva actividad" />
+        <button (click)="addActivity()">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>

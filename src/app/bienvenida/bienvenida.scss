@@ -1,0 +1,62 @@
+.inicio-bienvenida {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(to bottom, #f0f9ff, #e6f7ff);
+  font-family: 'Kalam', cursive;
+  color: #2d4a7d;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+  position: relative; // Esto crea el contexto de stacking
+  z-index: 10;         // Menor que el 999 de .pequeños-aprendizajes
+}
+
+.titulo-principal {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #0077b6;
+  animation: aparecer 1.2s ease-out;
+}
+
+.mensaje {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  color: #34495e;
+}
+
+.explorar-btn {
+  background-color: #ff8c42;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  animation: latido 2s infinite ease-in-out;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes latido {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.parallax {
+  max-width: 100%;
+  display: block;
+  margin: 2rem auto;
+}

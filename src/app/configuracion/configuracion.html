@@ -1,0 +1,37 @@
+<div class="fondo-modal" [@fadeOut]="animandoSalida ? 'salida' : 'entrada'">
+  <div class="panel-configuracion" [ngClass]="modoOscuro ? 'fondo-oscuro' : 'fondo-claro'">
+
+  <h2 tTranslate="CONFIGURACION.TITULO"></h2>
+
+<mat-slide-toggle appToggleEstilo (change)="onToggleDark($event.checked)">
+  <span class="toggle-label">
+    <img
+  [src]="modoOscuro ? 'assets/icons/Moon.svg' : 'assets/icons/Sun.svg'"
+  class="icono-svg"
+  [class.icono-luna]="modoOscuro"
+/>
+    <strong [@fadeSwitch]>
+  {{ (modoOscuro ? 'CONFIGURACION.MODO_OSCURO' : 'CONFIGURACION.MODO_CLARO') | translate }}
+</strong>
+  </span>
+</mat-slide-toggle>
+
+<button class="traducir-btn" (click)="alternarIdioma()">
+  <img [src]="idioma === 'es' ? 'assets/icons/f_Uk.png' : 'assets/icons/eS.png'" class="icono-bandera" />
+  {{ idioma === 'es' ? 'Traducir a Inglés' : 'Translate to Spanish' }}
+</button>
+
+    <section class="acciones">
+      <button class="guardar-btn" (click)="guardarCambios()" tTranslate="CONFIGURACION.GUARDAR">
+  {{ idioma === 'es' ? 'Guardar cambios' : 'Save changes' }}
+</button>
+
+<div *ngIf="mostrarAlerta" class="alerta-exito" [@fadeAlerta]>
+  {{ idioma === 'es' ? 'Cambios guardados con éxito' : 'Changes saved successfully' }}
+</div>
+
+
+      <button class="cerrar-btn" (click)="cerrarPanel()" tTranslate="CONFIGURACION.CERRAR">
+    {{ idioma === 'es' ? 'Cerrar' : 'Close' }}
+  </button>
+</section>

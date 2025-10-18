@@ -1,0 +1,62 @@
+<div class="filtro-evaluacion">
+  <!-- Selección de alumno -->
+  <label for="alumno" class="etiqueta">Selecciona el alumno:</label>
+  <select [(ngModel)]="alumnoId" name="alumno" required>
+    <option [ngValue]="''" disabled>— Selecciona —</option>
+    <option *ngFor="let alumno of alumnos" [ngValue]="alumno._id">
+      {{ alumno.nombre }} {{ alumno.apellido }} · Edad {{ alumno.edad }} · {{ alumno.grado }}° {{ alumno.grupo }}
+    </option>
+  </select>
+
+  <!-- Selección de cantidad de bimestres -->
+  <label for="cantidad" class="etiqueta">📊 ¿Cuántos bimestres deseas evaluar?</label>
+  <select [(ngModel)]="cantidadBimestres" name="cantidad" required>
+    <option [ngValue]="1">1 bimestre</option>
+    <option [ngValue]="2">2 bimestres</option>
+    <option [ngValue]="3">3 bimestres</option>
+  </select>
+
+  <!-- Captura de evaluación por bimestre -->
+  <div *ngIf="alumnoSeleccionado">
+    <h3>📝 Captura de evaluación para {{ alumnoSeleccionado.nombre }}</h3>
+
+    <div *ngFor="let bim of bimestres.slice(0, cantidadBimestres)" class="bloque-bimestre">
+      <h4>{{ bim }} bimestre</h4>
+
+      <div *ngFor="let area of areas" class="bloque-area">
+        <label>{{ area }}:</label>
+        <select [ngModel]="getNivel(bim, area)" (ngModelChange)="setNivel(bim, area, $event)" [name]="area + bim"
+          required>
+          <option value="Exploración">🌱 Exploración</option>
+          <option value="En proceso">💛 En proceso</option>
+          <option value="Logrado">🌟 Logrado</option>
+          <option value="Sobresaliente">🌈 Sobresaliente</option>
+        </select>
+      </div>
+
+        <button class="btn-guardar" (click)="guardarEvaluacionDesdeDashboard(bim)">
+  <span class="texto-boton">Guardar evaluación de {{ bim }} </span>
+  <animated-icons
+    src="https://animatedicons.co/get-icon?name=upload&style=minimalistic&token=b68988ad-448c-4fbb-9562-6b3e7d435d0c"
+    trigger="loop"
+      attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#0084f","group-2":"#F1F3F4FF","background":"#96c2eb"}}'
+    height="50px"
+    width="50px"
+    style="margin-left: 8px; vertical-align: middle;"
+  ></animated-icons>
+</button>
+      </div>
+    </div>
+    <!-- Mensaje afectivo -->
+    <div class="mensaje-afectivo" *ngIf="mensajeGuardado">
+      {{ mensajeGuardado }}
+    </div>
+    <div class="desglose-evaluacion" *ngIf="evaluacionDesglosada">
+  <h4 class="eva_Gua">📋 Evaluación guardada de {{ evaluacionDesglosada.bimestre }} bimestre:</h4>
+  <ul>
+    <li *ngFor="let area of areas">
+      <strong>{{ area }}:</strong>
+      {{ evaluacionDesglosada.evaluacion[area] || '— Sin nivel asignado —' }}
+    </li>
+  </ul>
+</div>
