@@ -1,0 +1,68 @@
+<div class="contenedor-formulario">
+  <!-- Pantalla inicial para elegir rol -->
+  <div *ngIf="!rolElegido" class="pantalla-rol fade-in">
+    <h2 class="titulo-rol">¿Cómo quieres iniciar sesión o registrarte?</h2>
+    <div class="botones-rol">
+      <button (click)="seleccionarRol('alumno')">👨‍🎓 Alumno</button>
+      <button (click)="seleccionarRol('maestro')">👨‍🏫 Maestro</button>
+    </div>
+  </div>
+
+  <!-- Mensaje afectivo según rol -->
+  <div *ngIf="rolElegido" class="mensaje-rol fade-in">
+    <p>
+      {{ rolElegido === 'alumno'
+        ? 'Has elegido ser alumno. ¡Tu camino de aprendizaje comienza aquí!'
+        : 'Has elegido ser maestro. ¡Tu aula te espera con entusiasmo!' }}
+    </p>
+  </div>
+
+  <!-- Formulario principal -->
+  <form *ngIf="rolElegido" [formGroup]="form" class="login-form fade-in">
+    <h1 class="titulo">{{ modo === 'login' ? 'BIENVENIDO' : 'BIENVENIDO' }}</h1>
+
+    <!-- Mensajes afectivos -->
+    <div *ngIf="mensajeError" class="alerta error fade-in">
+      <strong>Acceso denegado:</strong> {{ mensajeError }}
+    </div>
+    <div *ngIf="mensajeExito" class="alerta exito fade-in">
+      {{ mensajeExito }}
+    </div>
+
+    <!-- Campos del formulario -->
+    <div class="input-wrapper fade-in" *ngFor="let campo of camposRegistro">
+      <input
+        [type]="campo.tipo"
+        [formControlName]="campo.nombre"
+        [placeholder]="campo.placeholder"
+      />
+    </div>
+
+    <!-- Botón para enviar código -->
+    <button class="btn fade-in" type="button" *ngIf="!esperandoCodigo" (click)="enviarCodigo()">
+      {{ modo === 'login' ? 'Enviar código para iniciar sesión' : 'Enviar código para registrarse' }}
+    </button>
+
+    <!-- Campo para ingresar código -->
+    <div *ngIf="esperandoCodigo" class="input-wrapper fade-in">
+      <input
+        type="text"
+        [formControlName]="'codigoVerificacion'"
+        placeholder="Ingresa el código recibido"
+      />
+    </div>
+
+    <!-- Botón para confirmar código -->
+    <button class="btn fade-in" type="button" *ngIf="esperandoCodigo" (click)="confirmarCodigo()">
+      Confirmar código
+    </button>
+
+    <!-- Alternar modo -->
+    <button class="alternar-modo fade-in" type="button" (click)="alternarModo()">
+      {{ modo === 'login' ? '¿No tienes cuenta? Regístrate' : '¿Ya tienes cuenta? Inicia sesión' }}
+    </button>
+
+    <!-- Recaptcha invisible (ubicado correctamente) -->
+    <div id="recaptcha-container"></div>
+  </form>
+</div>

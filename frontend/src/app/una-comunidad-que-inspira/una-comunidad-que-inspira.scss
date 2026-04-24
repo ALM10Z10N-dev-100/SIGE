@@ -1,0 +1,139 @@
+.comunidad-inspiradora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: linear-gradient(to bottom, #ccefff, #fef9f5);
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+}
+
+.cloud-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: url('/assets/img/bg/nubes.png') repeat-x;
+  animation: cloudsMove 30s linear infinite;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.sol-radiante {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  animation: brillar 6s ease-in-out infinite;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.comunidad-inspiradora p {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
+  color: #1333eb;
+  animation: flotar 5s ease-in-out infinite;
+}
+
+.comunidad-inspiradora span {
+  display: inline-block;
+  margin: 8px;
+  font-size: 1.2rem;
+}
+
+img {
+  width: 450px;
+  max-width: 100%;
+  margin-top: 1rem;
+  animation: flotar 4s ease-in-out infinite;
+}
+
+.intro {
+  font-size: 1.4rem;
+  color: #64cfae;
+  filter: drop-shadow(2px 2px 4px #ffffff);
+}
+
+.resaltado {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #f48fb1;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+.valor-union {
+  color: #9575cd;
+}
+
+.valor-alegria {
+  color: #ffca28;
+  filter: drop-shadow(0 0 2px #ffe57f);
+}
+
+.valor-respeto {
+  color: #4fc3f7;
+}
+
+.valor-creatividad {
+  color: #ba68c8;
+}
+
+.valor-emocion {
+  color: #e57373;
+}
+
+.magia {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #09ff00;
+}
+
+h2 {
+  color: #64b5f6;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes brillar {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.03); }
+}
+
+.flecha-volver {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #ccefff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  animated-icons {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover animated-icons {
+    transform: scale(1.2) rotate(-10deg);
+  }
+}

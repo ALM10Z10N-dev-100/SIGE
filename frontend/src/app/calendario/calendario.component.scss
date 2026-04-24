@@ -1,0 +1,197 @@
+.calendar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.calendar-modal {
+  background: #f7fafd;
+  border-radius: 16px;
+  padding: 1rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.3s ease-out;
+
+  @keyframes popIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #47cbff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+
+    h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    .delete-btn {
+  margin-left: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    color: #d60000;
+  }
+}
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    .day-name {
+      text-align: center;
+      font-weight: bold;
+      color: #ba6fec;
+    }
+
+    .day-cell {
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      background: #ffe4c4;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &.today {
+        background: #ff69b4;
+        color: white;
+        font-weight: bold;
+      }
+
+      &.selected {
+        background: #87cefa;
+        color: white;
+        font-weight: bold;
+      }
+
+      &.holiday {
+        background: #ffd1dc;
+        border: 2px dashed #ff69b4;
+      }
+
+      &:hover {
+        background: #fdd9a0;
+      }
+    }
+  }
+
+  .calendar-footer {
+    text-align: center;
+    margin-top: 1rem;
+
+    .activity-box {
+      background: #fff0e6;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+
+      h3 {
+        margin-top: 0;
+        color: #ff8c00;
+        font-size: 1rem;
+      }
+
+      ul {
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+
+        li {
+          list-style: disc;
+          color: #333;
+          font-size: 0.95rem;
+        }
+      }
+
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      button {
+        background: #87cefa;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+
+        &:hover {
+          background: #6bbbe0;
+        }
+      }
+    }
+
+    .close-btn {
+      background: #64e7cb;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+
+      &:hover {
+        background: #64e7cb;
+      }
+    }
+  }
+}
+
+.reminder {
+  background: #dfffd6;
+  color: #2e7d32;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+  animation: fadeInOut 3s ease-in-out;
+
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.95); }
+    10% { opacity: 1; transform: scale(1); }
+    90% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
+  }
+}
